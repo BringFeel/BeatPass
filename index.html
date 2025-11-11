@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeatPass - La música nos une</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.3);
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-music text-3xl gradient-text"></i>
+                    <span class="text-2xl font-bold gradient-text">BeatPass</span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="hover:text-purple-400 transition">Inicio</a>
+                    <a href="#caracteristicas" class="hover:text-purple-400 transition">Características</a>
+                    <a href="#eventos" class="hover:text-purple-400 transition">Eventos</a>
+                    <a href="#contacto" class="hover:text-purple-400 transition">Contacto</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="./app/auth.php?view=login">
+                    <button class="px-6 py-2 border border-purple-500 rounded-full hover:bg-purple-500/10 transition">
+                        Iniciar Sesión
+                    </button>
+                    </a>
+                    <a href="./app/auth.php?view=register">
+                    <button class="px-6 py-2 btn-gradient rounded-full text-white font-semibold">
+                        Registrarse
+                    </button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 px-6">
+        <div class="container mx-auto text-center">
+            <div class="animate-float inline-block mb-6">
+                <i class="text-6xl gradient-text"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                La música nos une,<br>
+                <span class="gradient-text">la experiencia nos conecta</span>
+            </h1>
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Descubre y adquiere tickets para los mejores conciertos.
+                Una plataforma moderna y segura para vivir la música en vivo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="px-8 py-4 btn-gradient rounded-full text-white font-semibold text-lg">
+                    Explorar Eventos
+                </button>
+                <button class="px-8 py-4 border-2 border-cyan-400 rounded-full hover:bg-cyan-400/10 transition text-lg">
+                    Ver Demo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características -->
+    <section id="caracteristicas" class="py-20 px-6 bg-gradient-to-b from-black to-purple-950/20">
+        <div class="container mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">
+                ¿Por qué elegir <span class="gradient-text">BeatPass</span>?
+            </h2>
+            <p class="text-center text-gray-400 mb-16">Experiencia simplificada para amantes de la música</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-900/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-800 card-hover">
+                    <div class="text-4xl mb-4 text-purple-400">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Compra Rápida</h3>
+                    <p class="text-gray-400">
+                        Adquiere tus tickets en segundos. Proceso simplificado y seguro desde cualquier dispositivo.
+                    </p>
+                </div>
+
+                <div class="bg-gray-900/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-800 card-hover">
+                    <div class="text-4xl mb-4 text-cyan-400">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Tickets Digitales</h3>
+                    <p class="text-gray-400">
+                        Accede a tus entradas con código QR. Sin papeles, sin complicaciones, todo en tu móvil.
+                    </p>
+                </div>
+
+                <div class="bg-gray-900/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-800 card-hover">
+                    <div class="text-4xl mb-4 text-purple-400">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">100% Seguro</h3>
+                    <p class="text-gray-400">
+                        Tus datos protegidos con encriptación de última generación. Compra con total confianza.
+                    </p>
+                </div>
+
+                <div class="bg-gray-900/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-800 card-hover">
+                    <div class="text-4xl mb-4 text-cyan-400">
+                        <i class="fas fa-mobile-screen"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Multiplataforma</h3>
+                    <p class="text-gray-400">
+                        Accede desde web o app móvil. Tus eventos sincronizados en todos tus dispositivos.
+                    </p>
+                </div>
+
+                <div class="bg-gray-900/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-800 card-hover">
+                    <div class="text-4xl mb-4 text-purple-400">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Notificaciones</h3>
+                    <p class="text-gray-400">
+                        Mantente informado sobre nuevos eventos y artistas que te interesan. Nunca te pierdas un show.
+                    </p>
+                </div>
+
+                <div class="bg-gray-900/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-800 card-hover">
+                    <div class="text-4xl mb-4 text-cyan-400">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Favoritos</h3>
+                    <p class="text-gray-400">
+                        Guarda tus artistas y lugares favoritos. Recibe alertas cuando anuncien nuevos conciertos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eventos Destacados -->
+    <section id="eventos" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">
+                Próximos <span class="gradient-text">Eventos</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16">Los mejores conciertos te esperan</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-b from-purple-900/30 to-gray-900/50 rounded-3xl overflow-hidden border border-gray-800 card-hover">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                        <i class="fas fa-guitar text-6xl text-white/80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-cyan-400 text-sm mb-2">15 DIC 2024</div>
+                        <h3 class="text-xl font-bold mb-2">Rock en el Estadio</h3>
+                        <p class="text-gray-400 mb-4">Estadio Nacional - 20:00 HS</p>
+                        <button class="w-full py-3 btn-gradient rounded-full font-semibold">
+                            Comprar Tickets
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-b from-cyan-900/30 to-gray-900/50 rounded-3xl overflow-hidden border border-gray-800 card-hover">
+                    <div class="h-48 bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-drum text-6xl text-white/80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-cyan-400 text-sm mb-2">22 DIC 2024</div>
+                        <h3 class="text-xl font-bold mb-2">Festival Electrónico</h3>
+                        <p class="text-gray-400 mb-4">Arena Central - 22:00 HS</p>
+                        <button class="w-full py-3 btn-gradient rounded-full font-semibold">
+                            Comprar Tickets
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-b from-pink-900/30 to-gray-900/50 rounded-3xl overflow-hidden border border-gray-800 card-hover">
+                    <div class="h-48 bg-gradient-to-br from-pink-600 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-microphone text-6xl text-white/80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-cyan-400 text-sm mb-2">28 DIC 2024</div>
+                        <h3 class="text-xl font-bold mb-2">Noche de Pop</h3>
+                        <p class="text-gray-400 mb-4">Teatro Gran Rex - 21:00 HS</p>
+                        <button class="w-full py-3 btn-gradient rounded-full font-semibold">
+                            Comprar Tickets
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 bg-gradient-to-r from-purple-900/30 to-cyan-900/30">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                ¿Listo para vivir la <span class="gradient-text">experiencia</span>?
+            </h2>
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Únete a miles de fanáticos que ya disfrutan de los mejores conciertos con BeatPass
+            </p>
+            <button class="px-10 py-4 btn-gradient rounded-full text-white font-semibold text-lg">
+                Crear Cuenta Gratis
+            </button>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 px-6">
+        <div class="container mx-auto max-w-2xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">
+                <span class="gradient-text">Contáctanos</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-12">¿Tienes preguntas? Estamos aquí para ayudarte</p>
+
+            <form class="space-y-6">
+                <div>
+                    <input type="text" placeholder="Nombre completo"
+                           class="w-full px-6 py-4 bg-gray-900 border border-gray-800 rounded-2xl focus:outline-none focus:border-purple-500 transition">
+                </div>
+                <div>
+                    <input type="email" placeholder="Correo electrónico"
+                           class="w-full px-6 py-4 bg-gray-900 border border-gray-800 rounded-2xl focus:outline-none focus:border-purple-500 transition">
+                </div>
+                <div>
+                    <textarea rows="5" placeholder="Mensaje"
+                              class="w-full px-6 py-4 bg-gray-900 border border-gray-800 rounded-2xl focus:outline-none focus:border-purple-500 transition resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 btn-gradient rounded-full text-white font-semibold text-lg">
+                    Enviar Mensaje
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i class="fas fa-music text-2xl gradient-text"></i>
+                    <span class="text-xl font-bold gradient-text">BeatPass</span>
+                </div>
+
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="#" class="text-gray-400 hover:text-purple-400 transition">
+                        <i class="fab fa-facebook text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-purple-400 transition">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+
+                <p class="text-gray-400">2024 BeatPass. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
