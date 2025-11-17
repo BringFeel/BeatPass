@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BeatPass - Demo Frontend</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+* { font-family: 'Poppins', sans-serif; }
+.gradient-text { background: linear-gradient(135deg,#a855f7 0%,#06b6d4 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.btn-gradient { background:linear-gradient(135deg,#a855f7 0%,#06b6d4 100%); transition:all .3s ease; }
+.btn-gradient:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(168,85,247,.4); }
+.card-hover{transition:all .3s ease;} .card-hover:hover{transform:translateY(-5px); box-shadow:0 15px 35px rgba(168,85,247,.3);}
+.animate-float{animation:float 3s ease-in-out infinite;} @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+html{scroll-behavior:smooth;}
+</style>
+</head>
+<body class="bg-black text-white">
+<header class="fixed w-full top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
+<nav class="container mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<i class="fas fa-music text-3xl gradient-text"></i>
+<span class="text-2xl font-bold gradient-text">BeatPass</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#inicio" class="hover:text-purple-400 transition">Inicio</a>
+<a href="#caracteristicas" class="hover:text-purple-400 transition">Características</a>
+<a href="#eventos" class="hover:text-purple-400 transition">Eventos</a>
+<a href="#demo" class="hover:text-purple-400 transition">Demo</a>
+</div>
+<div class="flex items-center space-x-4">
+<a href="auth.html#login"><button class="px-6 py-2 border border-purple-500 rounded-full hover:bg-purple-500/10 transition">Iniciar Sesión</button></a>
+<a href="auth.html#register"><button class="px-6 py-2 btn-gradient rounded-full text-white font-semibold">Registrarse</button></a>
+</div>
+</div>
+</nav>
+</header>
+<section id="inicio" class="pt-32 pb-20 px-6">
+<div class="container mx-auto text-center">
+<div class="animate-float inline-block mb-6">
+<i class="fas fa-music text-6xl gradient-text"></i>
+</div>
+<h1 class="text-5xl md:text-7xl font-bold mb-6">La música nos une,<br /><span class="gradient-text">la experiencia nos conecta</span></h1>
+<p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">Versión demo estática de BeatPass. Navega el diseño sin necesidad de backend.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="user.html" class="px-8 py-4 btn-gradient rounded-full text-white font-semibold text-lg flex items-center justify-center gap-2"><i class="fas fa-user"></i><span>Ver Panel Usuario (demo)</span></a>
+<a href="admin.html" class="px-8 py-4 border-2 border-cyan-400 rounded-full hover:bg-cyan-400/10 transition text-lg flex items-center justify-center gap-2"><i class="fas fa-shield-halved"></i><span>Ver Panel Admin (demo)</span></a>
+</div>
+</div>
+</section>
+<section id="caracteristicas" class="py-20 px-6 bg-gradient-to-b from-black to-purple-950/20">
+<div class="container mx-auto">
+<h2 class="text-4xl md:text-5xl font-bold text-center mb-4">¿Por qué elegir <span class="gradient-text">BeatPass</span>?</h2>
+<p class="text-center text-gray-400 mb-16">Experiencia simplificada para amantes de la música</p>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-gray-900/50 p-8 rounded-3xl border border-gray-800 card-hover"><div class="text-4xl mb-4 text-purple-400"><i class="fas fa-bolt"></i></div><h3 class="text-2xl font-bold mb-3">Compra Rápida</h3><p class="text-gray-400">Flujo de compra pensado para minimizar pasos y fricción.</p></div>
+<div class="bg-gray-900/50 p-8 rounded-3xl border border-gray-800 card-hover"><div class="text-4xl mb-4 text-cyan-400"><i class="fas fa-qrcode"></i></div><h3 class="text-2xl font-bold mb-3">Tickets Digitales</h3><p class="text-gray-400">Entradas electrónicas listas para validar en puerta.</p></div>
+<div class="bg-gray-900/50 p-8 rounded-3xl border border-gray-800 card-hover"><div class="text-4xl mb-4 text-purple-400"><i class="fas fa-shield-halved"></i></div><h3 class="text-2xl font-bold mb-3">Seguridad</h3><p class="text-gray-400">Diseño preparado para integrarse con autenticación segura.</p></div>
+</div>
+</div>
+</section>
+<section id="eventos" class="py-20 px-6">
+<div class="container mx-auto">
+<h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Próximos <span class="gradient-text">Eventos</span></h2>
+<p class="text-center text-gray-400 mb-16">Datos de ejemplo estáticos</p>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-gradient-to-b from-purple-900/30 to-gray-900/50 rounded-3xl overflow-hidden border border-gray-800 card-hover"><div class="h-40 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center"><i class="fas fa-guitar text-5xl text-white/80"></i></div><div class="p-6"><div class="text-cyan-400 text-sm mb-2">15 DIC 2024</div><h3 class="text-xl font-bold mb-2">Rock en el Estadio</h3><p class="text-gray-400 mb-4">Estadio Nacional - 20:00 HS</p></div></div>
+<div class="bg-gradient-to-b from-cyan-900/30 to-gray-900/50 rounded-3xl overflow-hidden border border-gray-800 card-hover"><div class="h-40 bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center"><i class="fas fa-record-vinyl text-5xl text-white/80"></i></div><div class="p-6"><div class="text-cyan-400 text-sm mb-2">22 DIC 2024</div><h3 class="text-xl font-bold mb-2">Festival Electrónico</h3><p class="text-gray-400 mb-4">Arena Central - 22:00 HS</p></div></div>
+<div class="bg-gradient-to-b from-pink-900/30 to-gray-900/50 rounded-3xl overflow-hidden border border-gray-800 card-hover"><div class="h-40 bg-gradient-to-br from-pink-600 to-purple-600 flex items-center justify-center"><i class="fas fa-microphone text-5xl text-white/80"></i></div><div class="p-6"><div class="text-cyan-400 text-sm mb-2">28 DIC 2024</div><h3 class="text-xl font-bold mb-2">Noche de Pop</h3><p class="text-gray-400 mb-4">Teatro Gran Rex - 21:00 HS</p></div></div>
+</div>
+</div>
+</section>
+<section id="demo" class="py-20 px-6 bg-gradient-to-r from-purple-900/30 to-cyan-900/30">
+<div class="container mx-auto text-center">
+<h2 class="text-4xl md:text-5xl font-bold mb-6">Explora la <span class="gradient-text">demo estática</span></h2>
+<p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">Navega por las vistas de usuario y administrador sin necesidad de servidor ni base de datos.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="auth.html" class="px-8 py-4 btn-gradient rounded-full text-white font-semibold text-lg flex items-center justify-center gap-2"><i class="fas fa-user-lock"></i><span>Login / Registro (demo)</span></a>
+<a href="user.html" class="px-8 py-4 border-2 border-purple-400 rounded-full hover:bg-purple-400/10 transition text-lg flex items-center justify-center gap-2"><i class="fas fa-user"></i><span>Panel Usuario (demo)</span></a>
+<a href="admin.html" class="px-8 py-4 border-2 border-cyan-400 rounded-full hover:bg-cyan-400/10 transition text-lg flex items-center justify-center gap-2"><i class="fas fa-shield-halved"></i><span>Panel Admin (demo)</span></a>
+</div>
+</div>
+</section>
+<footer class="py-10 px-6 border-t border-gray-800">
+<div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center space-x-2">
+<i class="fas fa-music text-2xl gradient-text"></i>
+<span class="text-xl font-bold gradient-text">BeatPass</span>
+</div>
+<p class="text-gray-400 text-sm">Demo frontend estática · Sin conexión a servidor ni base de datos.</p>
+</div>
+</footer>
+</body>
+</html>

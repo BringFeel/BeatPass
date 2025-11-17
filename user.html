@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BeatPass Demo - Panel Usuario</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+*{font-family:'Poppins',sans-serif;} .gradient-text{background:linear-gradient(135deg,#a855f7 0%,#06b6d4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;} .btn-gradient{background:linear-gradient(135deg,#a855f7 0%,#06b6d4 100%);transition:all .3s ease;} .btn-gradient:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(168,85,247,.4);} .card-hover{transition:all .3s ease;} .card-hover:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(168,85,247,.3);} .stat-card{background:linear-gradient(135deg,rgba(168,85,247,.1) 0%,rgba(6,182,212,.1) 100%);border:2px solid rgba(168,85,247,.3);}
+</style>
+</head>
+<body class="bg-black text-white min-h-screen">
+<header class="bg-gray-900/50 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-md">
+<nav class="container mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<i class="fas fa-music text-3xl gradient-text"></i>
+<span class="text-2xl font-bold gradient-text">BeatPass</span>
+</div>
+<div class="flex items-center space-x-6 text-sm">
+<span class="text-gray-400"><i class="fas fa-user mr-2"></i>pancho_demo</span>
+<a href="index.html" class="px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-full hover:bg-gray-800 transition"><i class="fas fa-arrow-left mr-2"></i>Landing</a>
+<a href="auth.html#login" class="px-4 py-2 bg-red-500/20 border border-red-500 rounded-full hover:bg-red-500/30 transition"><i class="fas fa-sign-out-alt mr-2"></i>Logout (demo)</a>
+</div>
+</div>
+</nav>
+</header>
+<div class="container mx-auto px-6 py-8">
+<div class="mb-8">
+<h1 class="text-4xl font-bold mb-2">Bienvenido, <span class="gradient-text">pancho_demo</span></h1>
+<p class="text-gray-400">Demo estática del panel de usuario</p>
+</div>
+<div class="grid md:grid-cols-2 gap-6 mb-8">
+<div class="stat-card rounded-3xl p-6 card-hover">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xl font-semibold text-gray-300"><i class="fas fa-calendar-check mr-2 text-purple-400"></i>Próximo Evento</h3>
+</div>
+<div class="bg-black/30 rounded-2xl p-4 border border-gray-800">
+<div class="flex items-start justify-between mb-3">
+<div>
+<h4 class="text-2xl font-bold mb-1">Rock en el Estadio</h4>
+<p class="text-cyan-400 text-sm"><i class="fas fa-map-marker-alt mr-1"></i>Estadio Nacional</p>
+</div>
+<div class="bg-purple-500/20 px-3 py-1 rounded-full text-sm border border-purple-500">Rock</div>
+</div>
+<div class="flex items-center justify-between text-sm text-gray-400 mb-3">
+<span><i class="fas fa-calendar mr-1"></i>15 Dic 2024</span>
+<span><i class="fas fa-clock mr-1"></i>20:00 HS</span>
+</div>
+<div class="bg-gray-900/50 rounded-xl p-3 border border-gray-700">
+<div class="text-xs text-gray-400 mb-1">Código de Ticket</div>
+<div class="font-mono text-lg text-purple-400">BP-DEMO1234</div>
+</div>
+</div>
+</div>
+<div class="stat-card rounded-3xl p-6 card-hover">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xl font-semibold text-gray-300"><i class="fas fa-ticket mr-2 text-cyan-400"></i>Mis Tickets</h3>
+</div>
+<div class="text-center py-8">
+<div class="text-7xl font-bold gradient-text mb-4">3</div>
+<p class="text-gray-400 text-lg">Eventos Registrados (demo)</p>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-6 text-sm">
+<div class="bg-black/30 rounded-xl p-4 border border-gray-800 text-center"><div class="text-2xl font-bold text-purple-400">2</div><div class="text-sm text-gray-400">Próximos</div></div>
+<div class="bg-black/30 rounded-xl p-4 border border-gray-800 text-center"><div class="text-2xl font-bold text-cyan-400">1</div><div class="text-sm text-gray-400">Pasados</div></div>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h2 class="text-3xl font-bold mb-6"><i class="fas fa-list mr-3 text-purple-400"></i>Todos Mis Eventos (demo)</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-gray-900/50 rounded-3xl overflow-hidden border border-gray-800 card-hover">
+<div class="h-32 bg-gradient-to-br from-purple-600 to-cyan-600 flex items-center justify-center"><i class="fas fa-guitar text-5xl text-white/80"></i></div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-3">
+<div><h3 class="text-xl font-bold mb-1">Rock en el Estadio</h3><p class="text-sm text-gray-400"><i class="fas fa-map-marker-alt mr-1"></i>Estadio Nacional</p></div>
+<span class="bg-green-500/20 px-2 py-1 rounded-full text-xs border border-green-500">Próximo</span>
+</div>
+<div class="space-y-2 text-sm text-gray-400 mb-4">
+<p><i class="fas fa-calendar mr-2"></i>15 Dic 2024</p>
+<p><i class="fas fa-clock mr-2"></i>20:00 HS</p>
+<p><i class="fas fa-guitar mr-2"></i>Rock</p>
+</div>
+<div class="bg-black/50 rounded-xl p-3 mb-4">
+<div class="text-xs text-gray-500 mb-1">Código</div>
+<div class="font-mono text-sm text-purple-400">BP-DEMO1234</div>
+</div>
+<button class="w-full py-2 btn-gradient rounded-xl font-semibold text-sm"><i class="fas fa-qrcode mr-2"></i>Ver Ticket (demo)</button>
+</div>
+</div>
+<div class="bg-gray-900/50 rounded-3xl overflow-hidden border border-gray-800 card-hover">
+<div class="h-32 bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center"><i class="fas fa-record-vinyl text-5xl text-white/80"></i></div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-3">
+<div><h3 class="text-xl font-bold mb-1">Festival Electrónico</h3><p class="text-sm text-gray-400"><i class="fas fa-map-marker-alt mr-1"></i>Arena Central</p></div>
+<span class="bg-green-500/20 px-2 py-1 rounded-full text-xs border border-green-500">Próximo</span>
+</div>
+<div class="space-y-2 text-sm text-gray-400 mb-4">
+<p><i class="fas fa-calendar mr-2"></i>22 Dic 2024</p>
+<p><i class="fas fa-clock mr-2"></i>22:00 HS</p>
+<p><i class="fas fa-headphones mr-2"></i>Electrónica</p>
+</div>
+<div class="bg-black/50 rounded-xl p-3 mb-4">
+<div class="text-xs text-gray-500 mb-1">Código</div>
+<div class="font-mono text-sm text-purple-400">BP-DEMO5678</div>
+</div>
+<button class="w-full py-2 btn-gradient rounded-xl font-semibold text-sm"><i class="fas fa-qrcode mr-2"></i>Ver Ticket (demo)</button>
+</div>
+</div>
+<div class="bg-gray-900/50 rounded-3xl overflow-hidden border border-gray-800 card-hover">
+<div class="h-32 bg-gradient-to-br from-pink-600 to-purple-600 flex items-center justify-center"><i class="fas fa-microphone text-5xl text-white/80"></i></div>
+<div class="p-6">
+<div class="flex items-start justify-between mb-3">
+<div><h3 class="text-xl font-bold mb-1">Noche de Pop</h3><p class="text-sm text-gray-400"><i class="fas fa-map-marker-alt mr-1"></i>Teatro Gran Rex</p></div>
+<span class="bg-gray-700 px-2 py-1 rounded-full text-xs">Pasado</span>
+</div>
+<div class="space-y-2 text-sm text-gray-400 mb-4">
+<p><i class="fas fa-calendar mr-2"></i>28 Dic 2023</p>
+<p><i class="fas fa-clock mr-2"></i>21:00 HS</p>
+<p><i class="fas fa-music mr-2"></i>Pop</p>
+</div>
+<div class="bg-black/50 rounded-xl p-3 mb-4">
+<div class="text-xs text-gray-500 mb-1">Código</div>
+<div class="font-mono text-sm text-purple-400">BP-DEMO9012</div>
+</div>
+<button class="w-full py-2 btn-gradient rounded-xl font-semibold text-sm"><i class="fas fa-qrcode mr-2"></i>Ver Ticket (demo)</button>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center">
+<a href="explorar-user.html" class="inline-block px-8 py-3 btn-gradient rounded-full font-semibold text-sm"><i class="fas fa-search mr-2"></i>Explorar Eventos (demo)</a>
+</div>
+</div>
+</body>
+</html>

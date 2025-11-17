@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BeatPass Demo - Login / Registro</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+*{font-family:'Poppins',sans-serif;} .gradient-text{background:linear-gradient(135deg,#a855f7 0%,#06b6d4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.btn-gradient{background:linear-gradient(135deg,#a855f7 0%,#06b6d4 100%);transition:all .3s ease;} .btn-gradient:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(168,85,247,.4);} .tab-active{background:linear-gradient(135deg,#a855f7 0%,#06b6d4 100%);color:#fff;} .tab-inactive{background:rgba(255,255,255,.05);color:#9ca3af;} .tab-inactive:hover{background:rgba(255,255,255,.1);}
+</style>
+</head>
+<body class="bg-black text-white min-h-screen flex items-center justify-center px-6">
+<div class="w-full max-w-md">
+<div class="text-center mb-8">
+<div class="flex items-center justify-center space-x-2 mb-4">
+<i class="fas fa-music text-4xl gradient-text"></i>
+<span class="text-3xl font-bold gradient-text">BeatPass</span>
+</div>
+<p class="text-gray-400 text-sm">Demo estática de login / registro (sin backend)</p>
+</div>
+<div class="flex rounded-t-3xl overflow-hidden mb-0">
+<button id="tab-login" class="flex-1 py-4 text-center font-semibold transition tab-active" onclick="showForm('login')">Iniciar Sesión</button>
+<button id="tab-register" class="flex-1 py-4 text-center font-semibold transition tab-inactive" onclick="showForm('register')">Registrarse</button>
+</div>
+<div class="rounded-b-3xl rounded-t-none p-8 bg-gradient-to-br from-purple-900/20 to-cyan-900/20 border border-purple-500/40" id="forms">
+<form id="form-login" class="space-y-6" onsubmit="handleDemoSubmit(event, 'login')">
+<div>
+<label class="block text-sm font-semibold mb-2 text-gray-300"><i class="fas fa-user mr-2"></i>Nombre de Usuario</label>
+<input type="text" class="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-2xl focus:outline-none focus:border-purple-500 transition text-white" placeholder="Ingresa tu usuario" />
+</div>
+<div>
+<label class="block text-sm font-semibold mb-2 text-gray-300"><i class="fas fa-lock mr-2"></i>Contraseña</label>
+<input type="password" class="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-2xl focus:outline-none focus:border-purple-500 transition text-white" placeholder="Ingresa tu contraseña" />
+</div>
+
+<div>
+<label class="block text-sm font-semibold mb-2 text-gray-300"><i class="fas fa-shield-halved mr-2"></i>Acceder como</label>
+<select id="role-login" class="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-2xl focus:outline-none focus:border-purple-500 transition text-white text-sm">
+<option value="user" selected>Usuario</option>
+<option value="admin">Administrador</option>
+</select>
+</div>
+<button type="submit" class="w-full py-4 btn-gradient rounded-2xl text-white font-semibold text-lg">Iniciar Sesión (demo)</button>
+<p class="text-xs text-gray-500 mt-4 text-center">Demo estática: se te redirige al panel de usuario o administrador según la opción elegida.</p>
+</form>
+<form id="form-register" class="space-y-6 hidden" onsubmit="handleDemoSubmit(event, 'register')">
+<div>
+<label class="block text-sm font-semibold mb-2 text-gray-300"><i class="fas fa-user mr-2"></i>Nombre de Usuario</label>
+<input type="text" class="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 transition text-white" placeholder="Elige un nombre de usuario" />
+</div>
+<div>
+<label class="block text-sm font-semibold mb-2 text-gray-300"><i class="fas fa-lock mr-2"></i>Contraseña</label>
+<input type="password" class="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 transition text-white" placeholder="Crea una contraseña" />
+</div>
+
+<div>
+<label class="block text-sm font-semibold mb-2 text-gray-300"><i class="fas fa-shield-halved mr-2"></i>Crear cuenta como</label>
+<select id="role-register" class="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-2xl focus:outline-none focus:border-cyan-500 transition text-white text-sm">
+<option value="user" selected>Usuario</option>
+<option value="admin">Administrador</option>
+</select>
+</div>
+<button type="submit" class="w-full py-4 btn-gradient rounded-2xl text-white font-semibold text-lg">Crear Cuenta (demo)</button>
+<p class="text-xs text-gray-500 mt-4 text-center">Demo estática: según el rol elegido se abrirá el panel correspondiente.</p>
+</form>
+</div>
+<div class="text-center mt-6 text-gray-400 text-sm">
+<a href="index.html" class="hover:text-purple-400 transition"><i class="fas fa-arrow-left mr-2"></i>Volver al inicio de la demo</a>
+</div>
+</div>
+<script>
+function showForm(which){
+const loginForm=document.getElementById('form-login');
+const registerForm=document.getElementById('form-register');
+const tabLogin=document.getElementById('tab-login');
+const tabRegister=document.getElementById('tab-register');
+if(which==='login'){
+loginForm.classList.remove('hidden');
+registerForm.classList.add('hidden');
+tabLogin.classList.add('tab-active');
+tabLogin.classList.remove('tab-inactive');
+tabRegister.classList.add('tab-inactive');
+tabRegister.classList.remove('tab-active');
+}else{
+loginForm.classList.add('hidden');
+registerForm.classList.remove('hidden');
+tabRegister.classList.add('tab-active');
+tabRegister.classList.remove('tab-inactive');
+tabLogin.classList.add('tab-inactive');
+tabLogin.classList.remove('tab-active');
+}
+}
+if(location.hash==='#register'){showForm('register');}
+
+function handleDemoSubmit(event, mode){
+  event.preventDefault();
+  var role = mode === 'login'
+    ? document.getElementById('role-login').value
+    : document.getElementById('role-register').value;
+
+  if(role === 'admin'){
+    window.location.href = 'admin.html';
+  } else {
+    window.location.href = 'user.html';
+  }
+}
+</script>
+</body>
+</html>
